@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     private int highScore;
+    public int score;
     public int playerHealth = 50;
 
     

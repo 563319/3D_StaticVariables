@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
@@ -15,10 +16,21 @@ public class ButtonScript : MonoBehaviour
     public void ButtonResetPlayer()
     {
         LevelManager.instance.playerHealth = 50;
+        LevelManager.instance.score = 0;
         PlayerScript.reset = true;
 
         print("doing reset");
         
 
+    }
+    public void ButtonHeal()
+    {
+        LevelManager.instance.playerHealth += 1;
+
+
+    }
+    public void FrontEnd()
+    {
+        SceneManager.LoadScene(0);
     }
 }

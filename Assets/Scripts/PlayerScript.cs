@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class PlayerScript : MonoBehaviour
 
     int speed = 8;
     int jumpSpeed = 7;
-
+    int highScore;
 
     
     void Start()
     {
-        LevelManager.instance.SetHighScore(50);
+        
 
         rb = GetComponent<Rigidbody>();
         reset = false;
@@ -24,6 +25,13 @@ public class PlayerScript : MonoBehaviour
     
     void Update()
     {
+        LevelManager.instance.SetHighScore(highScore);
+        if (LevelManager.instance.score > highScore)
+        {
+            highScore = LevelManager.instance.score;
+        }
+
+
 
         DoMove();
         DoRespawn();
@@ -71,7 +79,7 @@ public class PlayerScript : MonoBehaviour
 
         string text = "High score: " + score;
 
-        //text += "\nThis is more text";
+        text += "\nScore: " + LevelManager.instance.score;
 
         // define debug text area
         GUI.contentColor = Color.white;
@@ -80,5 +88,14 @@ public class PlayerScript : MonoBehaviour
         GUILayout.EndArea();
     }
 
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Pill")
+        {
+            LevelManager.instance.score += 1;
+            Destroy(collision.gameObject);
+            print(LevelManager.instance.score);
 
+        }
+    }
 }
