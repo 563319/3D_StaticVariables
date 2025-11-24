@@ -26,15 +26,11 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            PlayerScript.playerHealth -= 1;
+            LevelManager.instance.playerHealth -= 10;
+            
 
         }
-        /*
-        if (PlayerScript.playerHealth < 1)
-        {
-            Destroy(gameObject);
-        }
-        */
+        
 
     }
 }

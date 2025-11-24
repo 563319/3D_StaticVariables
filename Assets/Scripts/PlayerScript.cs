@@ -3,53 +3,82 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    Rigidbody2D rb;
-    public static int playerHealth = 3;
+    Rigidbody rb;
+    
+    public static bool reset;
+
+
     int speed = 8;
     int jumpSpeed = 7;
+
+
+    
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        LevelManager.instance.SetHighScore(50);
+
+        rb = GetComponent<Rigidbody>();
+        reset = false;
     }
 
     
     void Update()
     {
 
+        DoMove();
+        DoRespawn();
 
-
-
-
-
-        if (Input.GetKey("w"))
-        {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
-
-        }
-        if (Input.GetKey("a"))
-        {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
-
-        }
-        if (Input.GetKey("s"))
-        {
-            transform.Translate(Vector3.back * Time.deltaTime * speed);
-
-        }
-        if (Input.GetKey("d"))
-        {
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
-
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            transform.Translate(Vector3.up * Time.deltaTime * jumpSpeed);
-
-        }
-        if (PlayerScript.playerHealth < 1)
+        if (LevelManager.instance.playerHealth < 1)
         {
             Destroy(gameObject);
+
+        }
+        
+    }
+
+    void DoMove()
+    {
+        float yvel=rb.linearVelocity.y;
+
+        float h = Input.GetAxis("Horizontal") * speed;
+        float v = Input.GetAxis("Vertical") * speed;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            yvel = jumpSpeed;
         }
 
+        rb.linearVelocity = new Vector3 (h, yvel,v);
+
+
+
+
     }
+
+    void DoRespawn()
+    {
+        if( reset )
+        {
+            //move player to reset point
+            transform.position = new Vector3(0, 1, 0);
+            reset = false;
+        }
+    }
+    private void OnGUI()
+    {
+        //read variable from LevelManager singleton
+        int score = LevelManager.instance.GetHighScore();
+
+        string text = "High score: " + score;
+
+        //text += "\nThis is more text";
+
+        // define debug text area
+        GUI.contentColor = Color.white;
+        GUILayout.BeginArea(new Rect(10f, 10f, 1600f, 1600f));
+        GUILayout.Label($"<size=24>{text}</size>");
+        GUILayout.EndArea();
+    }
+
+
 }
