@@ -5,7 +5,7 @@ public class PlayerScript : MonoBehaviour
 {
     Rigidbody2D rb;
     public static int playerHealth = 3;
-    int speed = 2;
+    int speed = 8;
     int jumpSpeed = 7;
     void Start()
     {
