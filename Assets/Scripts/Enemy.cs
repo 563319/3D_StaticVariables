@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
 {
     
     void Start()
-    {
+    { 
         
     }
 
@@ -20,17 +20,21 @@ public class Enemy : MonoBehaviour
         
     }
 
-    void OnCollsionEnter(Collider collision)
+    void OnCollisionEnter(Collision collision)
     {
+        
+
         if (collision.gameObject.tag == "Player")
         {
-            PlayerScript.playerHealth = PlayerScript.playerHealth - 1;
-
+            PlayerScript.playerHealth -= 1;
 
         }
+        /*
         if (PlayerScript.playerHealth < 1)
         {
             Destroy(gameObject);
         }
+        */
+
     }
 }
