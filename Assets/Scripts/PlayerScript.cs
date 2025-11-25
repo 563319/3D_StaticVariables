@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerScript : MonoBehaviour
@@ -38,7 +39,8 @@ public class PlayerScript : MonoBehaviour
 
         if (LevelManager.instance.playerHealth < 1)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene(0);
+            LevelManager.instance.playerHealth = 50;
 
         }
         

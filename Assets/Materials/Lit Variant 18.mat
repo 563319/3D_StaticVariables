@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Lit Variant 3
+  m_Name: Lit Variant 18
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -26,15 +26,13 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats:
-    - _Metallic: 1
-    - _Smoothness: 1
+    m_Floats: []
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.65882355, g: 0.7372549, b: 0.73333335, a: 1}
+    - _Color: {r: 0.65882355, g: 0.737255, b: 0.7333333, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &594670857671251342
+--- !u!114 &8073507017288743812
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
