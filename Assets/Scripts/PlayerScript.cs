@@ -72,7 +72,9 @@ public class PlayerScript : MonoBehaviour
         if( reset )
         {
             //move player to reset point
-            AudioManager.instance.PlayClip(1);
+            //AudioManager.instance.PlayClip(1);
+            AudioManager.instance.Play("reset");
+
             transform.position = new Vector3(0, 1, 0);
             reset = false;
         }
@@ -100,8 +102,9 @@ public class PlayerScript : MonoBehaviour
             LevelManager.instance.score += 1;
             Destroy(collision.gameObject);
             print(LevelManager.instance.score);
-            
-            AudioManager.instance.PlayClip(0);
+
+            //AudioManager.instance.PlayClip(0);
+            AudioManager.instance.Play("pickupcoin");
 
         }
     }
