@@ -1,12 +1,19 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerScript : MonoBehaviour
 {
+
     Rigidbody rb;
-    
+    /*
+    AudioSource audioSource;
+    public AudioClip sfx1;
+    public AudioClip sfx2;// sound effect asset from sfx folder 
+    //sfx1 can be an array of sounds 
+    */
     public static bool reset;
 
 
@@ -17,7 +24,8 @@ public class PlayerScript : MonoBehaviour
     
     void Start()
     {
-        
+
+        //audioSource = GetComponent<AudioSource>();
 
         rb = GetComponent<Rigidbody>();
         reset = false;
@@ -70,6 +78,7 @@ public class PlayerScript : MonoBehaviour
         if( reset )
         {
             //move player to reset point
+            AudioManager.instance.PlayClip(1);
             transform.position = new Vector3(0, 1, 0);
             reset = false;
         }
@@ -97,7 +106,20 @@ public class PlayerScript : MonoBehaviour
             LevelManager.instance.score += 1;
             Destroy(collision.gameObject);
             print(LevelManager.instance.score);
+            //PlaySoundEffect();
+            AudioManager.instance.PlayClip(0);
 
         }
     }
+    /*
+    void PlaySoundEffect()
+    {
+        audioSource.PlayOneShot(sfx1, 0.7f); // play audio clip with volume 0.7
+    }
+    void PlaySoundEffect2()
+    {
+        audioSource.PlayOneShot(sfx2, 0.7f); // play audio clip with volume 0.7
+    }
+    */
+
 }
