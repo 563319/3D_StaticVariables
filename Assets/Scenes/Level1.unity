@@ -8345,17 +8345,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94c4c36d1cee3d488121b5f1659cc35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  clips: []
   sounds:
   - name: reset
     clip: {fileID: 8300000, guid: a6c35d83f23238e4ab8b8a2a41f95faf, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: pickupcoin
     clip: {fileID: 8300000, guid: a3cbd9ad18a7a0c4fbe8897bbd1df947, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &1094289665
 Transform:

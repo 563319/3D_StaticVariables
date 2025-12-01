@@ -26,7 +26,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Metallic: 0.052
+    - _Smoothness: 1
     m_Colors:
     - _BaseColor: {r: 0.3160377, g: 0.88445884, b: 1, a: 1}
     - _Color: {r: 0.31603768, g: 0.88445884, b: 1, a: 1}
