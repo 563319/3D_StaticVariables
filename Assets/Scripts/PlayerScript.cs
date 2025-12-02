@@ -19,7 +19,22 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        ////////////////////////////////////////////////////////////
         
+        if (PlayerPrefs.HasKey("gameSessions") == true)
+        {
+            LevelManager.instance.gameSessions = PlayerPrefs.GetInt("gameSessions");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("gameSessions", 1);
+        }
+        LevelManager.instance.gameSessions += 1;
+        PlayerPrefs.SetInt("gameSessions", LevelManager.instance.gameSessions);
+        /////////////////////////////////////////////////////////////
+
+
+
         if (PlayerPrefs.HasKey("highScore") == true)
         {
             // the key highScore holds a value, therefore we can
@@ -35,21 +50,16 @@ public class PlayerScript : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         reset = false;
+
     }
 
     
     void Update()
     {
-        //LevelManager.instance.SetHighScore(PlayerPrefs.GetInt("highScore"));
-        
-
         
         if (LevelManager.instance.score > LevelManager.instance.highScore)
         {
             LevelManager.instance.highScore = LevelManager.instance.score;
-            //LevelManager.instance.SetHighScore(tempHighScore);
-            //save new score in playerprefs
-
             PlayerPrefs.SetInt("highScore", LevelManager.instance.highScore);
 
         }
@@ -110,11 +120,11 @@ public class PlayerScript : MonoBehaviour
     private void OnGUI()
     {
         //read variable from LevelManager singleton
-        int score = LevelManager.instance.GetHighScore();
+        int score = LevelManager.instance.highScore;
 
         string text = "High score: " + score;
 
-        text += "\nScore: " + LevelManager.instance.score;
+        text += "\nScore: " + LevelManager.instance.score + "\n games sessions: " + LevelManager.instance.gameSessions;
 
         // define debug text area
         GUI.contentColor = Color.white;

@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     public int highScore = 0;
     public int score = 0;
     public int playerHealth = 50;
+    public int gameSessions = 0;
 
     
     
