@@ -13,13 +13,25 @@ public class PlayerScript : MonoBehaviour
 
     int speed = 8;
     int jumpSpeed = 7;
-    int highScore;
-
+    int tempHighScore;
     
+
+
     void Start()
     {
-
         
+        if (PlayerPrefs.HasKey("highScore") == true)
+        {
+            // the key highScore holds a value, therefore we can
+            //retrieve it and store it in a variable
+            LevelManager.instance.highScore = PlayerPrefs.GetInt("highScore");
+        }
+        else
+        {
+            // the key highScore is null so give it a default value of 0 change to 1 to check if its working
+            PlayerPrefs.SetInt("highScore", 0);
+        }
+
 
         rb = GetComponent<Rigidbody>();
         reset = false;
@@ -28,10 +40,18 @@ public class PlayerScript : MonoBehaviour
     
     void Update()
     {
-        LevelManager.instance.SetHighScore(highScore);
-        if (LevelManager.instance.score > highScore)
+        //LevelManager.instance.SetHighScore(PlayerPrefs.GetInt("highScore"));
+        
+
+        
+        if (LevelManager.instance.score > LevelManager.instance.highScore)
         {
-            highScore = LevelManager.instance.score;
+            LevelManager.instance.highScore = LevelManager.instance.score;
+            //LevelManager.instance.SetHighScore(tempHighScore);
+            //save new score in playerprefs
+
+            PlayerPrefs.SetInt("highScore", LevelManager.instance.highScore);
+
         }
 
 
@@ -58,6 +78,14 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             yvel = jumpSpeed;
+        }
+        if (Input.GetKeyDown("o"))
+        {
+            LevelManager.instance.score -= 1;
+        }
+        if (Input.GetKeyDown("p"))
+        {
+            LevelManager.instance.score += 1;
         }
 
         rb.linearVelocity = new Vector3 (h, yvel,v);

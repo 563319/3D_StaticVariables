@@ -1137,13 +1137,13 @@ MonoBehaviour:
   sounds:
   - name: reset
     clip: {fileID: 8300000, guid: a6c35d83f23238e4ab8b8a2a41f95faf, type: 3}
-    volume: 0
+    volume: 1
     pitch: 0
     loop: 0
     source: {fileID: 0}
   - name: pickupcoin
     clip: {fileID: 8300000, guid: a3cbd9ad18a7a0c4fbe8897bbd1df947, type: 3}
-    volume: 0
+    volume: 1
     pitch: 0
     loop: 0
     source: {fileID: 0}

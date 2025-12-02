@@ -778,7 +778,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226934018}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 1.5
   m_LinearDamping: 0.3
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1914,11 +1914,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a6c35d83f23238e4ab8b8a2a41f95faf, type: 3}
     volume: 1
     pitch: 0
+    loop: 0
     source: {fileID: 0}
   - name: pickupcoin
     clip: {fileID: 8300000, guid: a3cbd9ad18a7a0c4fbe8897bbd1df947, type: 3}
     volume: 1
     pitch: 0
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &468265967
 Transform:
