@@ -89,11 +89,11 @@ public class PlayerScript : MonoBehaviour
         {
             yvel = jumpSpeed;
         }
-        if (Input.GetKeyDown("o"))
+        if (Input.GetKeyDown("-"))
         {
             LevelManager.instance.score -= 1;
         }
-        if (Input.GetKeyDown("p"))
+        if (Input.GetKeyDown("="))
         {
             LevelManager.instance.score += 1;
         }
