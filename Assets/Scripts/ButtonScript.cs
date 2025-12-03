@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
+
+
+
+    Sound sound;
+    
     //public variable to reference the button text - set this up in the Unity editor
     public TMP_Text buttonText;
 
@@ -44,5 +49,19 @@ public class ButtonScript : MonoBehaviour
     public void Level3()
     {
         SceneManager.LoadScene(3);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    //audio//sliders
+    public void SFXvolume()
+    {
+        sound.volume += 0.1f;
+    }
+    public void MusicVolmue()
+    {
+        
     }
 }
