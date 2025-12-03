@@ -25,7 +25,7 @@ public class ButtonScript : MonoBehaviour
     }
     public void ButtonHeal()
     {
-        LevelManager.instance.playerHealth += 1;
+        LevelManager.instance.playerHealth += 10;
 
 
     }
