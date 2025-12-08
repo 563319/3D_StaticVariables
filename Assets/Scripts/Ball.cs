@@ -18,7 +18,7 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.tag == "Ball")
         {
             LevelManager.instance.score += 1;
-            
+            AudioManager.instance.Play("pickupcoin", AudioManager.instance.sfxVolume);
 
         }
     }

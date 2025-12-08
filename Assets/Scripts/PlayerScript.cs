@@ -111,7 +111,7 @@ public class PlayerScript : MonoBehaviour
         {
             //move player to reset point
             //AudioManager.instance.PlayClip(1);
-            AudioManager.instance.Play("reset");
+            AudioManager.instance.Play("reset", AudioManager.instance.sfxVolume);
 
             transform.position = new Vector3(0, 1, 0);
             reset = false;
@@ -142,7 +142,7 @@ public class PlayerScript : MonoBehaviour
             print(LevelManager.instance.score);
 
             //AudioManager.instance.PlayClip(0);
-            AudioManager.instance.Play("pickupcoin");
+            AudioManager.instance.Play("pickupcoin", AudioManager.instance.sfxVolume);
 
         }
     }

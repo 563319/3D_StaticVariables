@@ -1406,8 +1406,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1540a5eed1dfec4493e38e31c7b8a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  highScore: 0
   score: 0
   playerHealth: 50
+  gameSessions: 0
 --- !u!4 &61701446
 Transform:
   m_ObjectHideFlags: 0
@@ -19185,6 +19187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94c4c36d1cee3d488121b5f1659cc35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  musicVolume: 0
+  sfxVolume: 0
   sounds:
   - name: reset
     clip: {fileID: 8300000, guid: a6c35d83f23238e4ab8b8a2a41f95faf, type: 3}
@@ -20010,8 +20014,8 @@ Transform:
   m_GameObject: {fileID: 1244583998}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8891001, z: 10.62}
-  m_LocalScale: {x: 4.7551074, y: 2.800683, z: 1.1791}
+  m_LocalPosition: {x: -0.0105, y: 0.8753, z: 10.3179}
+  m_LocalScale: {x: 3.7584693, y: 2.8284097, z: 1.783271}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

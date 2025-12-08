@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,6 +38,8 @@ public class ButtonScript : MonoBehaviour
     public void FrontEnd()
     {
         SceneManager.LoadScene(0);
+        AudioManager.instance.sliderMusic.value = AudioManager.instance.musicVolume;
+        AudioManager.instance.sliderSFX.value = AudioManager.instance.sfxVolume; 
     }
     public void Level1()
     {
@@ -55,13 +58,47 @@ public class ButtonScript : MonoBehaviour
         Application.Quit();
     }
 
-    //audio//sliders
-    public void SFXvolume()
+    
+   
+    public void PlaySFXtest()
     {
-        sound.volume += 0.1f;
+        AudioManager.instance.Play("reset", AudioManager.instance.sfxVolume);
+       
     }
-    public void MusicVolmue()
+
+
+
+    //music
+
+    public void ChangeMusicVolume(float volume)
     {
-        
+        //AudioManager.instance.musicVolume = PlayerPrefs.GetFloat("musicvol");
+        AudioManager.instance.musicVolume = volume;
+        //PlayerPrefs.Save();
+
+
+    }
+
+    //sfx
+    public void ChangeSFXVolume(float volume)
+    {
+        //AudioManager.instance.sfxVolume = PlayerPrefs.GetFloat("sfxvol");
+        AudioManager.instance.sfxVolume = volume;
+        //PlayerPrefs.Save();
+       
+    }
+
+
+
+
+
+
+    public void ApplyAudioChanges()
+    {
+        PlayerPrefs.SetFloat("sfxvol", AudioManager.instance.sfxVolume);
+        PlayerPrefs.Save();
+        PlayerPrefs.SetFloat("musicvol", AudioManager.instance.musicVolume);
+        PlayerPrefs.Save();
+
     }
 }
