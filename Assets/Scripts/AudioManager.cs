@@ -52,6 +52,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
 
+        print("Audiomanager Start");
         
         
 
@@ -79,8 +80,6 @@ public class AudioManager : MonoBehaviour
         }
 
 
-        sliderMusic.value = musicVolume;
-        sliderSFX.value = sfxVolume;
 
 
         Play("menumusic", musicVolume);

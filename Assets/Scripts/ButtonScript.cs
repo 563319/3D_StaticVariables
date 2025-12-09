@@ -38,8 +38,7 @@ public class ButtonScript : MonoBehaviour
     public void FrontEnd()
     {
         SceneManager.LoadScene(0);
-        AudioManager.instance.sliderMusic.value = AudioManager.instance.musicVolume;
-        AudioManager.instance.sliderSFX.value = AudioManager.instance.sfxVolume; 
+        
     }
     public void Level1()
     {
