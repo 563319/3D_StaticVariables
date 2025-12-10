@@ -7,6 +7,15 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+    //[SerializeField] AudioMixer mixer;
+
+    //const string MIXER_MUSIC = "MusicVolume";
+    //const string MIXER_SFX = "SFXVolume";
+
+
+
+
+
 
     public static AudioManager instance;
     public float musicVolume, sfxVolume;
@@ -41,6 +50,7 @@ public class AudioManager : MonoBehaviour
             s.source.clip = s.clip;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.outputAudioMixerGroup = s.output;
         }
 
 

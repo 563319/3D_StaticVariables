@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
+    [SerializeField] AudioMixer mixer;
 
-
+    const string MIXER_MUSIC = "MusicVolume";
+    const string MIXER_SFX = "SFXVolume";
 
     Sound sound;
     
@@ -73,7 +76,12 @@ public class ButtonScript : MonoBehaviour
     {
         //AudioManager.instance.musicVolume = PlayerPrefs.GetFloat("musicvol");
         AudioManager.instance.musicVolume = volume;
+       mixer.SetFloat(MIXER_MUSIC, Mathf.Log10(volume) * 20);
+
         //PlayerPrefs.Save();
+
+        //Mathf.Log10(volume) * 20
+
 
 
     }
@@ -83,8 +91,11 @@ public class ButtonScript : MonoBehaviour
     {
         //AudioManager.instance.sfxVolume = PlayerPrefs.GetFloat("sfxvol");
         AudioManager.instance.sfxVolume = volume;
+        mixer.SetFloat(MIXER_SFX, Mathf.Log10(volume) * 20);
         //PlayerPrefs.Save();
-       
+
+
+
     }
 
 
