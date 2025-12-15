@@ -2411,8 +2411,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 164.2, y: -171}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 109.00006, y: -201.29446}
+  m_SizeDelta: {x: 169.5282, y: 36.596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341490847
 MonoBehaviour:
@@ -2426,6 +2426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee6f20eff3029b458863f5f7f6bf815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
+  mixer: {fileID: 0}
   buttonText: {fileID: 0}
 --- !u!114 &341490848
 MonoBehaviour:
@@ -2496,14 +2497,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.8771584, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a32a6cc2cb803443983d45d4a513506, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4615,8 +4616,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 164.19995, y: -107.600006}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 109, y: -123.954865}
+  m_SizeDelta: {x: 169.5282, y: 36.596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &656439650
 MonoBehaviour:
@@ -4630,6 +4631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee6f20eff3029b458863f5f7f6bf815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
+  mixer: {fileID: 0}
   buttonText: {fileID: 1279458319}
 --- !u!114 &656439651
 MonoBehaviour:
@@ -4700,14 +4702,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.8771584, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a32a6cc2cb803443983d45d4a513506, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11892,8 +11894,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 378.8, y: -35.8}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 336.37976, y: -36.368393}
+  m_SizeDelta: {x: 169.5282, y: 36.596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1529432853
 MonoBehaviour:
@@ -11907,6 +11909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee6f20eff3029b458863f5f7f6bf815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
+  mixer: {fileID: 0}
   buttonText: {fileID: 690053927}
 --- !u!114 &1529432854
 MonoBehaviour:
@@ -11977,14 +11980,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.8771584, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a32a6cc2cb803443983d45d4a513506, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12444,8 +12447,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 164.19995, y: -234.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 109, y: -279}
+  m_SizeDelta: {x: 169.5282, y: 36.596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1596364274
 MonoBehaviour:
@@ -12459,6 +12462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee6f20eff3029b458863f5f7f6bf815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
+  mixer: {fileID: 0}
   buttonText: {fileID: 1530497197}
 --- !u!114 &1596364275
 MonoBehaviour:
@@ -12529,14 +12533,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.8771584, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a32a6cc2cb803443983d45d4a513506, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

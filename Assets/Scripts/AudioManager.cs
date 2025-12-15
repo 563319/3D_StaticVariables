@@ -16,11 +16,12 @@ public class AudioManager : MonoBehaviour
 
 
 
-
+    
     public static AudioManager instance;
     public float musicVolume, sfxVolume;
     //public AudioClip[] clips;
     //AudioSource audioSource; //reference to the audio source component on the game object
+    
 
     public Slider sliderMusic;
     public Slider sliderSFX;
@@ -91,8 +92,12 @@ public class AudioManager : MonoBehaviour
 
 
 
-
+        
+        
         Play("menumusic", musicVolume);
+        
+        
+
     }
 
     
