@@ -10,6 +10,11 @@ public class LevelManager : MonoBehaviour
     public int playerHealth = 50;
     public int gameSessions = 0;
 
+    public bool modeEasy = true;
+    public bool modeMedium = false;
+    public bool modeHard = false;
+    public int modeChoice = 1;
+
     
     
 
@@ -30,7 +35,24 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-   
+    private void Update()
+    {
+        
+        if (modeEasy == true)
+        {
+            modeChoice = 1;
+        }
+        if (modeMedium == true)
+        {
+            modeChoice = 2;
+        }
+        if (modeHard == true)
+        {
+            modeChoice = 3;
+        }
+        print(modeChoice);
+    }
+
 
     //these methods are globally accessible
     public void SetHighScore(int score)

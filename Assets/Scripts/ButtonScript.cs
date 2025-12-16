@@ -105,4 +105,34 @@ public class ButtonScript : MonoBehaviour
         PlayerPrefs.SetFloat("musicvol", AudioManager.instance.musicVolume);
         PlayerPrefs.Save();
     }
+
+
+
+
+    ///difficulty
+    public void SetDifficultyEasy()
+    {
+        LevelManager.instance.modeEasy = true;
+        LevelManager.instance.modeMedium = false;
+        LevelManager.instance.modeHard = false;
+    }
+    public void SetDifficultyMedium()
+    {
+        LevelManager.instance.modeMedium = true;
+        LevelManager.instance.modeEasy = false;
+        LevelManager.instance.modeHard = false;
+    }
+    public void SetDifficultyHard()
+    {
+        LevelManager.instance.modeHard = true;
+        LevelManager.instance.modeEasy = false;
+        LevelManager.instance.modeMedium = false;
+    }
+    public void ApplyDifficultyChanges()
+    {
+        PlayerPrefs.SetInt("DifficultyChoice", LevelManager.instance.modeChoice);
+        PlayerPrefs.Save();
+        
+    }
+
 }
