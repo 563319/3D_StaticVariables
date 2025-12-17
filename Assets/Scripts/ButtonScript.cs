@@ -132,7 +132,7 @@ public class ButtonScript : MonoBehaviour
     {
         PlayerPrefs.SetInt("DifficultyChoice", LevelManager.instance.modeChoice);
         PlayerPrefs.Save();
-        
+        print("difficulty applied: " + LevelManager.instance.modeChoice);
     }
 
 }

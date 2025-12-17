@@ -50,7 +50,7 @@ public class LevelManager : MonoBehaviour
         {
             modeChoice = 3;
         }
-        print(modeChoice);
+        print("difficulty: " + modeChoice);
     }
 
 
