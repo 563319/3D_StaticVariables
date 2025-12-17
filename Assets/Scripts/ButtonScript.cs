@@ -112,24 +112,28 @@ public class ButtonScript : MonoBehaviour
     ///difficulty
     public void SetDifficultyEasy()
     {
-        LevelManager.instance.modeEasy = true;
-        LevelManager.instance.modeMedium = false;
-        LevelManager.instance.modeHard = false;
+       // LevelManager.instance.modeEasy = true;
+       // LevelManager.instance.modeMedium = false;
+       // LevelManager.instance.modeHard = false;
+        LevelManager.instance.modeChoice = 1;
     }
     public void SetDifficultyMedium()
     {
-        LevelManager.instance.modeMedium = true;
-        LevelManager.instance.modeEasy = false;
-        LevelManager.instance.modeHard = false;
+        //LevelManager.instance.modeMedium = true;
+       // LevelManager.instance.modeEasy = false;
+       // LevelManager.instance.modeHard = false;
+        LevelManager.instance.modeChoice = 2;
     }
     public void SetDifficultyHard()
     {
-        LevelManager.instance.modeHard = true;
-        LevelManager.instance.modeEasy = false;
-        LevelManager.instance.modeMedium = false;
+       // LevelManager.instance.modeHard = true;
+       // LevelManager.instance.modeEasy = false;
+        //LevelManager.instance.modeMedium = false;
+        LevelManager.instance.modeChoice = 3;
     }
     public void ApplyDifficultyChanges()
     {
+        
         PlayerPrefs.SetInt("DifficultyChoice", LevelManager.instance.modeChoice);
         PlayerPrefs.Save();
         print("difficulty applied: " + LevelManager.instance.modeChoice);

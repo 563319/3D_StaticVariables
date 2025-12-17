@@ -35,9 +35,25 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        //difficulty
+        if (PlayerPrefs.HasKey("DifficultyChoice") == true)
+        {
+            print("succes!");
+            LevelManager.instance.modeChoice = PlayerPrefs.GetInt("DifficultyChoice");
+
+        }
+        else
+        {
+            PlayerPrefs.SetInt("DifficultyChoice", 1);
+        }
+
+
+    }
     private void Update()
     {
-        
+        /*
         if (modeEasy == true)
         {
             modeChoice = 1;
@@ -50,7 +66,9 @@ public class LevelManager : MonoBehaviour
         {
             modeChoice = 3;
         }
+        */
         print("difficulty: " + modeChoice);
+        
     }
 
 

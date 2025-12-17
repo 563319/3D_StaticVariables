@@ -34,16 +34,8 @@ public class PlayerScript : MonoBehaviour
         /////////////////////////////////////////////////////////////
         ///
 
-
-        if (PlayerPrefs.HasKey("DifficultyChoice") == true)
-        {
-            LevelManager.instance.modeChoice = PlayerPrefs.GetInt("DifficultyChoice");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("DifficultyChoice", 1);
-        }
-        PlayerPrefs.SetInt("DifficultyChoice", LevelManager.instance.modeChoice);
+       
+        
 
 
 
