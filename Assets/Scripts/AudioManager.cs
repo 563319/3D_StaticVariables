@@ -1,7 +1,8 @@
-using UnityEditorInternal;
+//using UnityEditorInternal;
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
-using System;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 
@@ -17,8 +18,8 @@ public class AudioManager : MonoBehaviour
 
 
     
-    public static AudioManager instance;
-    public float musicVolume, sfxVolume;
+    public static AudioManager instance=null;
+    public float musicVolume = 1, sfxVolume = 1;
     //public AudioClip[] clips;
     //AudioSource audioSource; //reference to the audio source component on the game object
     
@@ -44,13 +45,16 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        ///
+        
+        ///
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.volume = s.volume;
             s.source.outputAudioMixerGroup = s.output;
         }
 
@@ -62,23 +66,23 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-
         print("Audiomanager Start");
-        
-        
+
+
 
         if (PlayerPrefs.HasKey("musicvol") == true)
         {
             print("mw");
             musicVolume = PlayerPrefs.GetFloat("musicvol");
+            
         }
         else
         {
             print("playerprefs set to 0.5 music");
             PlayerPrefs.SetFloat("musicvol", 0.5f);
         }
-        
-        
+
+
         if (PlayerPrefs.HasKey("sfxvol") == true)
         {
             print("mw");
@@ -91,16 +95,22 @@ public class AudioManager : MonoBehaviour
         }
 
 
+        
 
-        
-        
+
+
         Play("menumusic", musicVolume);
-        
-        
+
+
 
     }
 
-    
+    private void Update()
+    {
+        //mixer.SetFloat(MIXER_MUSIC, Mathf.Log10(volume) * 20);
+    }
+
+
     public void Play (string name, float vol )
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
