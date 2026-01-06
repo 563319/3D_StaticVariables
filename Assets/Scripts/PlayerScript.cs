@@ -145,11 +145,12 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.tag == "Pill")
         {
             LevelManager.instance.score += 1;
+            AudioManager.instance.Play("pickupcoin", AudioManager.instance.sfxVolume);
             Destroy(collision.gameObject);
             print(LevelManager.instance.score);
 
             //AudioManager.instance.PlayClip(0);
-            AudioManager.instance.Play("pickupcoin", AudioManager.instance.sfxVolume);
+            
 
         }
     }

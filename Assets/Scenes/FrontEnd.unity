@@ -2929,11 +2929,11 @@ Transform:
   m_GameObject: {fileID: 695991340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -605.36066, y: -0.022, z: -5265.5723}
+  m_LocalPosition: {x: 0.11175537, y: -0.022, z: -4.998535}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1932798881}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &698069735
 GameObject:
@@ -6001,69 +6001,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271956520}
   m_CullTransparentMesh: 1
---- !u!1 &1300697392
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1300697394}
-  - component: {fileID: 1300697393}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1300697393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300697392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c94c4c36d1cee3d488121b5f1659cc35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  musicVolume: 0
-  sfxVolume: 0
-  sliderMusic: {fileID: 0}
-  sliderSFX: {fileID: 0}
-  sounds:
-  - name: reset
-    clip: {fileID: 8300000, guid: a6c35d83f23238e4ab8b8a2a41f95faf, type: 3}
-    output: {fileID: 0}
-    volume: 1
-    pitch: 0
-    loop: 0
-    source: {fileID: 0}
-  - name: pickupcoin
-    clip: {fileID: 8300000, guid: a3cbd9ad18a7a0c4fbe8897bbd1df947, type: 3}
-    output: {fileID: 0}
-    volume: 1
-    pitch: 0
-    loop: 0
-    source: {fileID: 0}
---- !u!4 &1300697394
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300697392}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -610.1794, y: 1.09931, z: -5267.145}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1932798881}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1307233771
 GameObject:
   m_ObjectHideFlags: 0
@@ -8453,39 +8390,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903226949}
   m_CullTransparentMesh: 1
---- !u!1 &1932798880
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1932798881}
-  m_Layer: 0
-  m_Name: stuff
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1932798881
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932798880}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 605.4724, y: 0, z: 5260.5737}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1300697394}
-  - {fileID: 695991342}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1976568167
 GameObject:
   m_ObjectHideFlags: 0
@@ -9618,10 +9522,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1261830547}
-  - {fileID: 1932798881}
   - {fileID: 247814040}
   - {fileID: 76220806}
   - {fileID: 1868580392}
   - {fileID: 2122625560}
-  - {fileID: 44347162}
   - {fileID: 1487460143}
+  - {fileID: 695991342}
+  - {fileID: 44347162}

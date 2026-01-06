@@ -17,8 +17,8 @@ public class AudioManager : MonoBehaviour
 
 
 
-    
-    public static AudioManager instance=null;
+
+    public static AudioManager instance;//=null;
     public float musicVolume = 1, sfxVolume = 1;
     //public AudioClip[] clips;
     //AudioSource audioSource; //reference to the audio source component on the game object
@@ -30,6 +30,8 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     void Awake()
     {
+        print(Time.deltaTime);
+
         //DontDestroyOnLoad(gameObject);
         // if instance is null, store a reference to this instance
         if (instance == null)
@@ -37,12 +39,16 @@ public class AudioManager : MonoBehaviour
             // a reference does not exist, so store it
             instance = this;
             DontDestroyOnLoad(gameObject);
+            print("dont destroy audiomanager, instance=" + instance);
         }
         else
         {
             // Another instance of this gameobject has been made so destroy it
             // as we already have one
-            Destroy(gameObject);
+
+            print("destroying audiomanager");
+
+            //Destroy(gameObject);
             return;
         }
         ///
