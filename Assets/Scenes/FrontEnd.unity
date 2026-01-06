@@ -3324,7 +3324,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "How To Play:\n kill the enemies and collect pills \n and try to get new
+  m_text: "How To Play:\n avoid the enemies and collect pills \n and try to get new
     best highscore!\n\nControls:\n wasd = movemnet keys\n q = quit\n ctrl = shoot\n
     m = map\n r = reset"
   m_isRightToLeft: 0
