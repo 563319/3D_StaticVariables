@@ -65,10 +65,6 @@ public class AudioManager : MonoBehaviour
         }
 
 
-
-
-
-
     }
     private void Start()
     {
@@ -105,7 +101,7 @@ public class AudioManager : MonoBehaviour
 
 
 
-        Play("menumusic", musicVolume);
+        AudioManager.instance.Play("menumusic", musicVolume);
 
 
 
