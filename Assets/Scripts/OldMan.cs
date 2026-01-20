@@ -18,8 +18,8 @@ public class OldMan : MonoBehaviour
 
 
     bool isGrounded = false;
-    int jumpCounter = 0;
-
+    
+    
     /*
     bool facingLeft = false;
     bool facingRight = false;
@@ -37,7 +37,7 @@ public class OldMan : MonoBehaviour
     void Update()
     {
         OldManUpdate();
-
+        
 
     }
 
@@ -98,17 +98,15 @@ public class OldMan : MonoBehaviour
             anim.SetBool("isJumping", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCounter == 0 )//&& isGrounded == true)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
             isJumping = true;
-            jumpCounter += 1;
+
             //yvel = jumpSpeed;
             //rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpSpeed, rb.linearVelocity.z);
             rb.linearVelocity = new Vector3(0, jumpSpeed, 0);
-            if (jumpCounter > 1)
-            {
-                jumpCounter = 0;
-            }
+            //rb.AddForce(0, yvel, 0);
+            
 
         }
         else
@@ -151,7 +149,7 @@ public class OldMan : MonoBehaviour
         
 
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "slope")
         {
@@ -162,12 +160,19 @@ public class OldMan : MonoBehaviour
             isOnSlope = false;
         }
 
-        
-
+        if (collision.gameObject.layer == 6)
+        {
+            print("debug layer ground detected");
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
 
 
     }
-
+    
 
 }
 /*

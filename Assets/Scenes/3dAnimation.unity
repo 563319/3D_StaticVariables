@@ -183,8 +183,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2.4
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -227,7 +227,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
+  m_ColorTemperature: 6397
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 697959558}
   - component: {fileID: 697959557}
   - component: {fileID: 697959556}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: slope
   m_Icon: {fileID: 0}
@@ -1292,7 +1292,7 @@ GameObject:
   - component: {fileID: 1296187338}
   - component: {fileID: 1296187337}
   - component: {fileID: 1296187336}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -1545,7 +1545,7 @@ GameObject:
   - component: {fileID: 1933705071}
   - component: {fileID: 1933705070}
   - component: {fileID: 1933705069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1658,7 +1658,7 @@ GameObject:
   - component: {fileID: 1975745187}
   - component: {fileID: 1975745186}
   - component: {fileID: 1975745185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: slope
   m_Icon: {fileID: 0}
@@ -1770,7 +1770,7 @@ GameObject:
   - component: {fileID: 2078138411}
   - component: {fileID: 2078138410}
   - component: {fileID: 2078138409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CubeMoveing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2158,7 +2158,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &919132148712473114
@@ -2831,7 +2831,7 @@ Transform:
   m_Children:
   - {fileID: 8293645961097827051}
   m_Father: {fileID: 543450652967590061}
-  m_LocalEulerAnglesHint: {x: -220.5222, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -96.75647, y: 0, z: 0}
 --- !u!1 &4174635268911126035
 GameObject:
   m_ObjectHideFlags: 0
