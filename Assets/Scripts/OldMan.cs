@@ -6,7 +6,7 @@ public class OldMan : MonoBehaviour
     Animator anim;
     private Rigidbody rb;
     public float speed = 8;
-    public int jumpSpeed = 15;
+    public int jumpSpeed = 100;
     public GameObject ball;
     public Transform ballSpawnPoint;
     public Transform cam;
@@ -20,12 +20,6 @@ public class OldMan : MonoBehaviour
     bool isGrounded = false;
     
     
-    /*
-    bool facingLeft = false;
-    bool facingRight = false;
-    bool facingUp = false;
-    bool facingDown = false;
-    */
 
     void Start()
     {
@@ -37,8 +31,19 @@ public class OldMan : MonoBehaviour
     void Update()
     {
         OldManUpdate();
-        
 
+        print("isJumping = " + isJumping);
+        print("isOnSlope = " + isOnSlope);
+        print("isGrounded = " + isGrounded);
+    }
+    void FixedUpdate()
+    {
+        if (isOnSlope == true)
+        {
+            print("add y force");
+            rb.AddForce(0, -12, 0);
+            //rb.linearVelocity = new Vector3(0, -0.01f, 0);
+        }
     }
 
     private void ThrowBall()
@@ -141,38 +146,45 @@ public class OldMan : MonoBehaviour
             //rb.linearVelocity = movement * speed; // (moveDir.normalized * speed);
 
         }
-        if (isOnSlope == true)
-        {
-            rb.AddForce(0, -7, 0);
-        }
+       
         
         
 
     }
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "slope")
         {
             isOnSlope = true;
         }
-        else
-        {
-            isOnSlope = false;
-        }
-
+        
         if (collision.gameObject.layer == 6)
         {
-            print("debug layer ground detected");
+            
             isGrounded = true;
         }
-        else
-        {
-            isGrounded = false;
-        }
+       
 
 
     }
-    
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "slope")
+        {
+            isOnSlope = false;
+        }
+        
+
+        if (collision.gameObject.layer == 6)
+        {
+
+            isGrounded = false;
+        }
+        
+
+    }
+
+
 
 }
 /*
