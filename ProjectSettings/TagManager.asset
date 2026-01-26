@@ -9,6 +9,7 @@ TagManager:
   - Ball
   - ground
   - slope
+  - flashlight
   layers:
   - Default
   - TransparentFX

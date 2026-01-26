@@ -5,9 +5,13 @@ public class OldMan : MonoBehaviour
     public CharacterController controller;
     Animator anim;
     private Rigidbody rb;
-    public float speed = 8;
-    public int jumpSpeed = 100;
+    public float speed = 10;
+    public int jumpSpeed = 10;
     public GameObject ball;
+    public GameObject flashLight;
+    bool flashLightBool = true;
+    public GameObject flashLightCover;
+    
     public Transform ballSpawnPoint;
     public Transform cam;
 
@@ -16,8 +20,10 @@ public class OldMan : MonoBehaviour
     bool isOnSlope = false;
     bool isJumping = false;
 
-
+    bool isRayColliding = false;
+    bool isRaySlope = false;
     bool isGrounded = false;
+    //float gravity = -55f;
     
     
 
@@ -32,19 +38,22 @@ public class OldMan : MonoBehaviour
     {
         OldManUpdate();
 
-        print("isJumping = " + isJumping);
-        print("isOnSlope = " + isOnSlope);
-        print("isGrounded = " + isGrounded);
+        //print("isJumping = " + isJumping);
+        //print("isOnSlope = " + isOnSlope);
+        //print("isGrounded = " + isGrounded);
+        print(rb.linearVelocity.y);
     }
+    
     void FixedUpdate()
     {
-        if (isOnSlope == true)
+        if (isRaySlope == true)
         {
-            print("add y force");
-            rb.AddForce(0, -12, 0);
-            //rb.linearVelocity = new Vector3(0, -0.01f, 0);
+            print("adding force on slope");
+            rb.AddForce(0f, -40f, 0f);
         }
+        
     }
+    
 
     private void ThrowBall()
     {
@@ -103,22 +112,7 @@ public class OldMan : MonoBehaviour
             anim.SetBool("isJumping", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
-        {
-            isJumping = true;
-
-            //yvel = jumpSpeed;
-            //rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpSpeed, rb.linearVelocity.z);
-            rb.linearVelocity = new Vector3(0, jumpSpeed, 0);
-            //rb.AddForce(0, yvel, 0);
-            
-
-        }
-        else
-        {
-            isJumping = false;
-        }
-
+        
         if (Input.GetKey("f"))
         {
             print("f detected");
@@ -131,6 +125,24 @@ public class OldMan : MonoBehaviour
             {
                 print("is throwing = true");
             }
+        }
+        if (Input.GetKeyDown("l"))
+        {
+            if (flashLightBool == true)
+            {
+                flashLightBool = false;
+                flashLight.SetActive(false);
+                flashLightCover.SetActive(true);
+            }
+            else
+            {
+                flashLightBool = true;
+                flashLight.SetActive(true);
+                flashLightCover.SetActive(false);
+
+            }
+            
+                
         }
         if (direction.magnitude >= 0.1f)
         {
@@ -146,11 +158,24 @@ public class OldMan : MonoBehaviour
             //rb.linearVelocity = movement * speed; // (moveDir.normalized * speed);
 
         }
-       
-        
-        
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        {
+            isJumping = true;
+            rb.linearVelocity = new Vector3(0, jumpSpeed, 0);
+            
 
+        }
+        if (isJumping == true && rb.linearVelocity.y < 0)
+        {
+            isJumping = false;
+        }
+
+
+
+
+        Raycast();
     }
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "slope")
@@ -164,6 +189,22 @@ public class OldMan : MonoBehaviour
             isGrounded = true;
         }
        
+
+
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "slope")
+        {
+            isOnSlope = true;
+        }
+
+        if (collision.gameObject.layer == 6)
+        {
+
+            isGrounded = true;
+        }
+
 
 
     }
@@ -183,83 +224,45 @@ public class OldMan : MonoBehaviour
         
 
     }
+    
+    
+
+    private void Raycast()
+    {
+        Vector3 offset = new Vector3(0, -1.74f, 0);
+        var ray = new Ray(transform.position + offset , Vector3.down);
+        
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, 5f))
+        {
+            //isGrounded = true;
+            isRayColliding = true;
+            if (hitInfo.collider.gameObject.tag == "slope" && rb.linearVelocity.y < 0)
+            {
+                isRaySlope = true;
+            }
+            else
+            {
+                isRaySlope = false;
+            }
+            
+            if (hitInfo.collider.gameObject.layer == 6)
+            {
+               // isGrounded = true;
+            }
+            else
+            {
+               // isGrounded = false;
+            }
+
+        }
+        else
+        {
+            //isGrounded = false;
+            isRayColliding = false;
+        }
+            Debug.DrawRay(transform.position + offset, Vector3.down, Color.red);
+    }
 
 
 
 }
-/*
-void Update()
-    {
-
-       
-
-        float yvel = rb.linearVelocity.y;
-
-        //float h = Input.GetAxisRaw("Horizontal");// * speed;
-        float v = Input.GetAxisRaw("Vertical");// * speed;
-        
-        if (Input.GetKey("d"))
-        {
-            rb.transform.Rotate(0.0f, 1.0f, 0.0f, Space.Self);
-        }
-        if (Input.GetKey("a"))
-        {
-            rb.transform.Rotate(0.0f, -1.0f, 0.0f, Space.Self);
-        }
-       
-        if (v > 0 || v < 0 )
-        {
-            anim.SetBool("isRunning", true);
-            anim.SetBool("isIdle", false);
-            anim.SetBool("isThrowing", false);
-
-        }
-        else
-        {
-            anim.SetBool("isIdle", true);
-            anim.SetBool("isRunning", false);
-        }
-        if (yvel > 0)
-        {
-            anim.SetBool("isJumping", true);
-            anim.SetBool("isRunning", false);
-            anim.SetBool("isIdle", false);
-            anim.SetBool("isThrowing", false);
-
-        }
-        else
-        {
-            anim.SetBool("isJumping", false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            
-            yvel = jumpSpeed;
-            
-        }
-        
-        if (Input.GetKeyDown("f"))
-        {
-            print("f detected");
-            
-            anim.SetBool("isRunning", false);
-            anim.SetBool("isJumping", false);
-            anim.SetBool("isIdle", false);
-            anim.SetBool("isThrowing", true);
-            if (anim.GetBool("isThrowing"))
-            {
-                print("is throwing = true");
-            }
-        }
-        else 
-        {
-            //anim.SetBool("isThrowing", false);
-            //anim.SetBool("isThrowing", falswe);
-        }
-
-
-        direction = new Vector3(0, yvel) + (v * transform.forward);
-        rb.linearVelocity = direction * speed;
-    }
-*/
